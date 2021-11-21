@@ -1,25 +1,14 @@
 <?php
 
-/************* Shortcodes ********************/
+/************* Include all Files from includes ********************/
+function wpbs_init_includes() {
+  $setup = get_stylesheet_directory() . "/includes/theme_setup.php";
+  if ( is_readable( $setup ) ) require_once( $setup );
 
-$social = get_stylesheet_directory() . "/includes/shortcodes/social.php";
-if ( is_readable( $social ) ) require_once( $social );
-
-$portfolio = get_stylesheet_directory() . "/includes/shortcodes/portfolio.php";
-if ( is_readable( $portfolio ) ) require_once( $portfolio );
-
-/************* Meta Boxes using CMB2 plugin ********************/
-
-$portfolio = get_stylesheet_directory() . "/includes/meta-boxes/portfolio.php";
-if ( is_readable( $portfolio ) ) require_once( $portfolio );
-
-$homepage = get_stylesheet_directory() . "/includes/meta-boxes/homepage.php";
-if ( is_readable( $homepage ) ) require_once( $homepage );
-
-/************* Theme Options ********************/
-
-$options = get_stylesheet_directory() . "/includes/theme-options/options-cmb.php";
-if ( is_readable( $options ) ) require_once( $options );
+  //   $setup = TEMPLATEPATH . "/includes/theme_setup.php";
+  // if ( is_readable( $setup ) ) require_once( $setup );
+ 
+}
 
 function wpbs_admin_media() {
 	global $post;
@@ -35,24 +24,24 @@ if ( ! isset( $content_width ) ) $content_width = '';
 // 
 
 // enqueue styles
-if( !function_exists("wpbs_base_theme_styles") ) {  
-    function wpbs_base_theme_styles() { 
+// if( !function_exists("wpbs_base_theme_styles") ) {  
+function wpbs_theme_styles() { 
 
-      wp_enqueue_style('lightbox', get_template_directory_uri() . '/bower_components/lity/dist/lity.min.css', '1.6.5'); 
+  wp_enqueue_style('lightbox', get_template_directory_uri() . '/bower_components/lity/dist/lity.min.css', '1.6.5'); 
 
-      wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700,800|Roboto+Mono', array(), '1.0', 'all' );
+  wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700,800|Roboto+Mono', array(), '1.0', 'all' );
 
-      // This is the compiled css file from SASS - this means you compile the SASS file locally and put it in the appropriate directory if you want to make any changes to the master bootstrap.css.
-      // // For child themes
-      wp_register_style( 'tones-style', get_stylesheet_directory_uri() . '/library/dist/css/styles.fbc55c40.min.css', array(), '1.0', 'all' );
-      wp_enqueue_style( 'tones-style' );
+  // This is the compiled css file from SASS - this means you compile the SASS file locally and put it in the appropriate directory if you want to make any changes to the master bootstrap.css.
+  // // For child themes
+  wp_register_style( 'tones-style', get_stylesheet_directory_uri() . '/library/dist/css/styles.81d6477a.min.css', array(), '1.0', 'all' );
+  wp_enqueue_style( 'tones-style' );
 
-    }
 }
+// }
 add_action( 'wp_enqueue_scripts', 'wpbs_base_theme_styles' );
 
 // enqueue javascript
-function wpbs_base_theme_js(){
+function wpbs_theme_js(){
 
   if ( !is_admin() ){
     if ( is_singular() AND comments_open() AND ( get_option( 'thread_comments' ) == 1) ) 
@@ -71,7 +60,7 @@ function wpbs_base_theme_js(){
   wp_enqueue_script('lightbox', get_template_directory_uri() . '/bower_components/lity/dist/lity.min.js', array('jquery'), '1.6.5', true);
 
   wp_register_script( 'tones-js', 
-    get_stylesheet_directory_uri() . '/library/dist/js/scripts.c3c950a8.min.js',
+    get_stylesheet_directory_uri() . '/library/dist/js/scripts.0217d779.min.js',
     array('jquery'), 
     '1.2',
     true );

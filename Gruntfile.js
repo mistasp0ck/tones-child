@@ -9,9 +9,10 @@ module.exports = function(grunt) {
         jshintrc: '.jshintrc'
       },
       all: [
-        '../wp-bootstrap/library/js/*.js',
-        'library/js/*.js',
-        'library/admin/js/*.js',
+      '../wp-bootstrap/library/js/*.js',
+      'bower_components/chosen/chosen.jquery.js',
+      'library/js/*.js',
+      'library/admin/js/*.js'
       ]
     },
     sass: {
@@ -101,7 +102,7 @@ module.exports = function(grunt) {
     },    // autoprefixer
     autoprefixer: {
         options: {
-            browsers: ['last 2 versions', 'ie 9', 'ios 6', 'android 4'],
+            browsers: ['last 2 versions', 'ie 11', 'ios 6', 'android 4'],
             map: true
         },
         files: {
@@ -121,19 +122,6 @@ module.exports = function(grunt) {
           dest: 'library/dist/css',
           ext: '.css'
         }]
-      }
-    },   
-    grunticon: {
-      myIcons: {
-          files: [{
-            expand: true,
-            cwd: 'library/img',
-            src: ['*.svg', '*.png'],
-            dest: "library/dist/img"
-          }],
-          options: {
-            enhanceSVG: true
-          }
       }
     },
     version: {
@@ -173,7 +161,7 @@ module.exports = function(grunt) {
           },
           options: {
               watchTask: true,
-              proxy: "tones.local:8888/tonys-site/"
+              proxy: "tony.local:8888/tonys-site/"
           }
       }
     },
@@ -197,12 +185,12 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-autoprefixer');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-browserify');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-wp-assets');
-  // grunt.loadNpmTasks('grunt-grunticon');
-  // grunt.loadNpmTasks('grunt-svgstore');
+  grunt.loadNpmTasks('grunt-terser');
   grunt.loadNpmTasks('grunt-browser-sync');
 
   // Register tasks
@@ -211,8 +199,8 @@ module.exports = function(grunt) {
   grunt.registerTask('build', [
     'clean:dist',
     'sass:prod',
-    'uglify:dist',
-    // 'grunticon',    
+    'browserify:dist', 
+    'terser:dist',
     'autoprefixer',
     'cssmin',
     'version',

@@ -307,15 +307,17 @@ h1 {
 }
 
 #main p.meta .time:before {
-  @include fa-icon();
-  content: $fa-var-clock-o;
+  @extend %fa-icon;
+  @extend .far;
+  content: fa-content($fa-var-clock);
 }
 #main p.meta .cat {
   margin-left: 25px;
 }
 #main p.meta .cat:before {
-  @include fa-icon();
-  content: $fa-var-folder-open-o;
+  @extend %fa-icon;
+  @extend .far;
+  content: fa-content($fa-var-folder-open);
 }
 
 .page-header {
@@ -644,7 +646,7 @@ footer .widget ul li {
 }
 
 /* Medium devices (desktops, 992px and up) */
-@media (min-width: $screen-md-min) {
+@media (min-width: 992px) {
 
   .section {
     margin-top: 30px;
@@ -660,7 +662,7 @@ footer .widget ul li {
 }
 
 /* Large devices (large desktops, 1200px and up) */
-@media (min-width: $screen-lg-min) { 
+@media (min-width: 1200px) { 
     .portfolio-feed .portfolio-entry.col-sm-7 {
       // height: 400px;
   }

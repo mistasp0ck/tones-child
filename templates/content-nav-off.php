@@ -1,5 +1,5 @@
 <?php 
-$options = tones_get_page_options();
+$options = wpbs_get_page_options();
 ?>
 <header role="banner">
     
@@ -17,7 +17,7 @@ $options = tones_get_page_options();
       </div>
 
       <div id="nav-container" class="collapse navbar-collapse navbar-responsive-collapse">
-        <?php wpbs__main_nav(); // Adjust using Menus in Wordpress Admin ?>
+        <?php wpbs_main_nav(); // Adjust using Menus in Wordpress Admin ?>
 
         <?php if( tones_get_option( 'wpbs_menu_search' ) == 'true') { ?>
           <!-- <div class="search-form"> -->

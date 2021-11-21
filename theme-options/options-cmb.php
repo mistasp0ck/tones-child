@@ -3,20 +3,20 @@
  * CMB2 Theme Options
  * @version 0.1.0
  */
-if (!class_exists('FsCustom_Admin')) {
-class FsCustom_Admin {
+if (!class_exists('WpbsCustom_Admin')) {
+class WpbsCustom_Admin {
 
 	/**
  	 * Option key, and option page slug
  	 * @var string
  	 */
-	private $key = 'fscustom_options';
+	private $key = 'wpbs_options';
 
 	/**
  	 * Options page metabox id
  	 * @var string
  	 */
-	private $metabox_id = 'fscustom_option_metabox';
+	private $metabox_id = 'wpbs_option_metabox';
 
 	/**
 	 * Options Page title
@@ -33,7 +33,7 @@ class FsCustom_Admin {
 	/**
 	 * Holds an instance of the object
 	 *
-	 * @var fscustom_Admin
+	 * @var wpbs_Admin
 	 **/
 	private static $instance = null;
 
@@ -49,7 +49,7 @@ class FsCustom_Admin {
 	/**
 	 * Returns the running object
 	 *
-	 * @return fscustom_Admin
+	 * @return wpbs_Admin
 	 **/
 	public static function get_instance() {
 		if( is_null( self::$instance ) ) {
@@ -113,7 +113,7 @@ class FsCustom_Admin {
 
 		$prefix = 'wpbs_';
 
-		$tones_options = new_cmb2_box( array(
+		$wpbs_options = new_cmb2_box( array(
 			'id'         => $this->metabox_id,
 			'hookup'     => false,
 			'cmb_styles' => false,
@@ -125,14 +125,14 @@ class FsCustom_Admin {
 		) );
 
 		// Set our CMB2 fields
-		$tones_options->add_field( array(
+		$wpbs_options->add_field( array(
 			'name'    => 'Header Settings',
 			'desc'    => 'These are the global settings for the header, some can be overridden separately.',
 			'type' => 'title',
 			'id'   => 'wiki_test_title'
 		) );
 
-		$tones_options->add_field( array(
+		$wpbs_options->add_field( array(
 		    'name'    => 'Menu Style',
 		    'id'      => $prefix . 'menu_style',
 		    'type'    => 'radio_inline',
@@ -143,7 +143,7 @@ class FsCustom_Admin {
 		    'default' => 'light',
 		) );
 
-		$tones_options->add_field( array(
+		$wpbs_options->add_field( array(
 		    'name'    => 'Menu State',
 		    'id'      => $prefix . 'menu_state',
 		    'type'    => 'radio_inline',
@@ -154,7 +154,42 @@ class FsCustom_Admin {
 		    'default' => 'notfixed',
 		) );
 
-		$tones_options->add_field( array(
+		// $wpbs_options->add_field( array(
+		//     'name'    => 'Enable Flyout Menu?',
+		//     'id'      => $prefix . 'nav_sidebar',
+		//     'type'    => 'radio_inline',
+		//     'options' => array(
+		//     	'true' => __( 'Yes', 'cmb2' ),
+		//     	'false'   => __( 'No', 'cmb2' )
+		//     ),
+		//     'default' => 'false',
+		// ) );
+
+		$wpbs_options->add_field( array(
+		    'name'    => 'Mobile Menu Style',
+		    'id'      => $prefix . 'nav_sidebar_style',
+		    'type'    => 'radio_inline',
+		    'options' => array(
+		    	'default' => __('Default', 'cmb2'),
+		    	'right-flyout-menu' => __( 'Right Sidebar', 'cmb2' ),
+		    	'full-flyout-menu'   => __( 'Full Width', 'cmb2' )
+		    ),
+		    'default' => 'false',
+		) );
+
+		$wpbs_options->add_field( array(
+		    'name'    => 'Hamburger Menu Breakpoint',
+		    'id'      => $prefix . 'nav_hamburger',
+		    'type'    => 'radio_inline',
+		    'options' => array(
+		    	'mobile' => __( 'Mobile', 'cmb2' ),
+		    	'tablet'   => __( 'Tablet', 'cmb2' ),
+		    	'desktop'   => __( 'Desktop', 'cmb2' ),
+		    ),
+		    'default' => 'mobile',
+		) );
+
+		$wpbs_options->add_field( array(
 		    'name'    => 'Search Bar in Menu?',
 		    'id'      => $prefix . 'menu_search',
 		    'type'    => 'radio_inline',
@@ -165,7 +200,7 @@ class FsCustom_Admin {
 		    'default' => 'false',
 		) );
 
-		$tones_options->add_field( array(
+		$wpbs_options->add_field( array(
 		    'name'    => 'Enable Sliding Search?',
 		    'id'      => $prefix . 'menu_slide',
 		    'type'    => 'radio_inline',
@@ -177,7 +212,7 @@ class FsCustom_Admin {
 		) );
 
 
-		$tones_options->add_field( array(
+		$wpbs_options->add_field( array(
 			'name'    => 'Logo for Light Menu (default)',
 			'desc'    => 'Logo used for light color menu',
 			'id'      => $prefix . 'logo_light',
@@ -202,7 +237,7 @@ class FsCustom_Admin {
 			'preview_size' => 'large', // Image size to use when previewing in the admin.
 		) );	
 
-		$tones_options->add_field( array(
+		$wpbs_options->add_field( array(
 			'name'    => 'Logo for Inverse Menu',
 			'desc'    => 'Logo used for inverse (dark) color menu',
 			'id'      => $prefix . 'logo_dark',
@@ -227,7 +262,7 @@ class FsCustom_Admin {
 			'preview_size' => 'large', // Image size to use when previewing in the admin.
 		) );
 
-		$tones_options->add_field( array(
+		$wpbs_options->add_field( array(
 			'name'    => 'Logo for Transparent Menu',
 			'desc'    => 'Logo used for transparent menu',
 			'id'      => $prefix . 'logo_trans',
@@ -252,62 +287,115 @@ class FsCustom_Admin {
 			'preview_size' => 'large', // Image size to use when previewing in the admin.
 		) );	
 
-		$tones_options->add_field( array(
-			'name'    => 'Social Settings',
-			// 'desc'    => 'These are the global settings for the header, some can be overridden separately.',
-			'type' => 'title',
-			'id'   => 'tones_social_heading'
+		$wpbs_options->add_field( array(
+		  'name' => __( 'Featured Text Alignment', 'cmb2' ),
+		  'desc' => __( 'Optional Title that appears on top of the featured image', 'cmb2' ),
+		  'id'   => $prefix . 'featured_align',
+		  'type'    => 'radio_inline',
+		  'options' => array(
+		      'left' => __( 'Left', 'cmb2' ),
+		      'center'   => __( 'Center', 'cmb2' ),
+		      'right'   => __( 'Right', 'cmb2' ),
+		  ),
+		  'default' => 'left',
 		) );
 
-		$tones_options->add_field( array(
-			'name' => __( 'Twitter', 'fscustom' ),
-			'desc' => __( 'Twitter Url', 'fscustom' ),
-			'id'   => $prefix . 'twitter',
-			'type' => 'text',
+		$wpbs_options->add_field( array(
+		  'name'    => 'Social Settings',
+		  // 'desc'    => 'These are the global settings for the header, some can be overridden separately.',
+		  'type' => 'title',
+		  'id'   => 'tones_social_heading'
+		) );
+
+		$wpbs_options->add_field( array(
+		  'name' => __( 'Twitter', 'fscustom' ),
+		  'desc' => __( 'Twitter Url', 'fscustom' ),
+		  'id'   => $prefix . 'twitter',
+		  'type' => 'text',
+		  'default' => '',
+		) );
+
+		$wpbs_options->add_field( array(
+		  'name' => __( 'Facebook', 'fscustom' ),
+		  'desc' => __( 'Facebook Url', 'fscustom' ),
+		  'id'   => $prefix . 'facebook',
+		  'type' => 'text',
+		  'default' => '',
+		) );
+
+		$wpbs_options->add_field( array(
+		  'name' => __( 'LinkedIn', 'fscustom' ),
+		  'desc' => __( 'LindedIn Url', 'fscustom' ),
+		  'id'   => $prefix . 'linkedin',
+		  'type' => 'text',
+		  'default' => '',
+		) );
+
+		$wpbs_options->add_field( array(
+		  'name' => __( 'GitHub', 'fscustom' ),
+		  'desc' => __( 'GitHub Url', 'fscustom' ),
+		  'id'   => $prefix . 'github',
+		  'type' => 'text',
+		  'default' => '',
+		) );
+
+
+		$wpbs_options->add_field( array(
+			'name' => __( 'Tracking Code &lt;header&gt;', 'fscustom' ),
+			'desc' => __( 'Add tracking code(s) that need to go in the <head> tag', 'fscustom' ),
+			'id'   => $prefix . 'scripts_header',
+			'type' => 'textarea_code',
 			'default' => '',
-		) );
-
-		$tones_options->add_field( array(
-			'name' => __( 'Facebook', 'fscustom' ),
-			'desc' => __( 'Facebook Url', 'fscustom' ),
-			'id'   => $prefix . 'facebook',
-			'type' => 'text',
+		) );	
+		$wpbs_options->add_field( array(
+			'name' => __( 'Tracking Code &lt;body&gt', 'fscustom' ),
+			'desc' => __( 'Add tracking code(s) that need to go below the opening <body> tag', 'fscustom' ),
+			'id'   => $prefix . 'scripts_body',
+			'type' => 'textarea_code',
 			'default' => '',
-		) );
-
-		$tones_options->add_field( array(
-			'name' => __( 'LinkedIn', 'fscustom' ),
-			'desc' => __( 'LindedIn Url', 'fscustom' ),
-			'id'   => $prefix . 'linkedin',
-			'type' => 'text',
-			'default' => '',
-		) );
-
-		$tones_options->add_field( array(
-			'name' => __( 'GitHub', 'fscustom' ),
-			'desc' => __( 'GitHub Url', 'fscustom' ),
-			'id'   => $prefix . 'github',
-			'type' => 'text',
-			'default' => '',
-		) );
-
-
-		// $tones_options->add_field( array(
-		// 	'name' => __( 'Tracking Code', 'fscustom' ),
-		// 	'desc' => __( 'Add tracking code(s) that need to go below the opening <body> tag', 'fscustom' ),
-		// 	'id'   => $prefix . 'tracking-scripts',
-		// 	'type' => 'textarea',
-		// 	'default' => '',
-		// ) );				
+		) );				
 				
 
-		// $tones_options->add_field( array(
+		// $wpbs_options->add_field( array(
 		// 	'name'    => __( 'Test Color Picker', 'fscustom' ),
 		// 	'desc'    => __( 'field description (optional)', 'fscustom' ),
 		// 	'id'      => 'test_colorpicker',
 		// 	'type'    => 'colorpicker',
 		// 	'default' => '#bada55',
 		// ) );
+
+		// Set our CMB2 fields
+		$wpbs_options->add_field( array(
+			'name'    => 'Footer Settings',
+			'desc'    => 'These are the global settings for the footer.',
+			'type' => 'title',
+			'id'   => 'footer_title'
+		) );
+
+		$wpbs_options->add_field( array(
+			'name'    => 'Logo for Footer',
+			// 'desc'    => 'Logo used for transparent menu',
+			'id'      => $prefix . 'logo_footer',
+			'type'    => 'file',
+			// Optional:
+			'options' => array(
+				'url' => false, // Hide the text input for the url
+			),
+			'text'    => array(
+				'add_upload_file_text' => 'Add Image' // Change upload button text. Default: "Add or Upload File"
+			),
+			// query_args are passed to wp.media's library query.
+			'query_args' => array(
+				//'type' => 'application/pdf', // Make library only display PDFs.
+				// Or only allow gif, jpg, or png images
+				'type' => array(
+					'image/gif',
+					'image/jpeg',
+					'image/png',
+				),
+			),
+			'preview_size' => 'large', // Image size to use when previewing in the admin.
+		) );
 
 	}
 
@@ -346,12 +434,12 @@ class FsCustom_Admin {
 }
 
 /**
- * Helper function to get/return the fscustom_Admin object
+ * Helper function to get/return the wpbs_Admin object
  * @since  0.1.0
- * @return fscustom_Admin object
+ * @return wpbs_Admin object
  */
-function fscustom_admin() {
-	return fscustom_Admin::get_instance();
+function wpbs_admin() {
+	return wpbs_Admin::get_instance();
 }
 
 /**
@@ -361,13 +449,13 @@ function fscustom_admin() {
  * @param  mixed  $default Optional default value
  * @return mixed           Option value
  */
-function tones_get_option( $key = '', $default = false ) {
+function wpbs_get_option( $key = '', $default = false ) {
 	if ( function_exists( 'cmb2_get_option' ) ) {
 		// Use cmb2_get_option as it passes through some key filters.
-		return cmb2_get_option( 'fscustom_options', $key, $default );
+		return cmb2_get_option( 'wpbs_options', $key, $default );
 	}
 	// Fallback to get_option if CMB2 is not loaded yet.
-	$opts = get_option( 'fscustom_options', $default );
+	$opts = get_option( 'wpbs_options', $default );
 	$val = $default;
 	if ( 'all' == $key ) {
 		$val = $opts;
@@ -378,5 +466,5 @@ function tones_get_option( $key = '', $default = false ) {
 }
 
 // Get it started
-fscustom_admin();
+wpbs_admin();
 }

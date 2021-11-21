@@ -34,7 +34,15 @@
     "load-grunt-tasks": "^3.4.1",
     "node-sass": "^6.0.0",
     "popper.js": "^1.16.1",
-    "terser": "^5.7.1"  
+    "terser": "^5.7.1"
+  },
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  },
+  "browserify-shim": {
+    "jquery": "global:jQuery"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

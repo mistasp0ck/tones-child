@@ -10,6 +10,12 @@ WP-Bootstrap - Navbar
 body.fixed {
   padding-top: 100px;
 }
+header .navbar-collapse {
+  @media (min-width: 768px) {
+    justify-content: flex-end;
+  }
+
+}
 
 .navbar {
   border-radius: 0;
@@ -133,7 +139,7 @@ body.fixed {
     background: transparent;
     padding: 0px 15px; 
 
-    @media (min-width: $screen-tablet) {
+    @media (min-width: 768px) {
       background: transparent;
       padding: 0px; 
     } 

@@ -4,29 +4,32 @@ Tonystaffiero Theme - Main Styles
 */
 
 // @import "../../../tones/library/scss/customVariables";
-@import "customVariables";
-@import "../../../tones/library/scss/variables.scss";
-@import "../../../tones/library/scss/elements.scss";
-@import "../../../tones/library/scss/buttons.scss";
-@import "../../../tones/library/scss/fonts.scss";
-@import "../../../tones/library/scss/wp.scss";
+// @import "customVariables";
+@import "variables.scss";
+@import "../../../wp-bootstrap/library/scss/elements.scss";
+@import "../../../wp-bootstrap/library/scss/buttons.scss";
+@import "../../../wp-bootstrap/library/scss/fonts.scss";
+@import "../../../wp-bootstrap/library/scss/wp.scss";
 @import "wp.scss";
 //all included
-@import "../../../tones/bower_components/bootstrap-sass/assets/stylesheets/bootstrap.scss";
-@import "../../../tones/bower_components/slick-carousel/slick/slick-theme.scss";
-@import "../../../tones/bower_components/slick-carousel/slick/slick.scss";
-@import '../../../tones/bower_components/font-awesome/scss/font-awesome.scss';
+@import "bootstrap.scss";
+@import "../../../wp-bootstrap/bower_components/slick-carousel/slick/slick-theme.scss";
+@import "../../../wp-bootstrap/bower_components/slick-carousel/slick/slick.scss";
+@import '../../../wp-bootstrap/bower_components/font-awesome/scss/fontawesome.scss';
+@import '../../../wp-bootstrap/bower_components/font-awesome/scss/solid.scss';
+@import '../../../wp-bootstrap/bower_components/font-awesome/scss/brands.scss';
+@import '../../../wp-bootstrap/bower_components/font-awesome/scss/regular.scss';
 
-@import "../../../tones/library/scss/layout.scss";
+@import "../../../wp-bootstrap/library/scss/layout.scss";
 @import "navbar.scss";
-@import "../../../tones/library/scss/posts.scss";
-@import "../../../tones/library/scss/pages.scss";
-@import "../../../tones/library/scss/comments.scss";
-@import "../../../tones/library/scss/image-attachments.scss";
-@import "../../../tones/library/scss/widgets.scss";
-@import "../../../tones/library/scss/gallery.scss";
-@import "../../../tones/library/scss/slick-carousel.scss";
-@import "../../../tones/library/scss/arrow-animate.scss";
+@import "../../../wp-bootstrap/library/scss/posts.scss";
+@import "../../../wp-bootstrap/library/scss/pages.scss";
+@import "../../../wp-bootstrap/library/scss/comments.scss";
+@import "../../../wp-bootstrap/library/scss/image-attachments.scss";
+@import "../../../wp-bootstrap/library/scss/widgets.scss";
+@import "../../../wp-bootstrap/library/scss/gallery.scss";
+@import "../../../wp-bootstrap/library/scss/slick-carousel.scss";
+@import "../../../wp-bootstrap/library/scss/arrow-animate.scss";
 
 // Add additional child imports here
 
