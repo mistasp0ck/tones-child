@@ -1,0 +1,34 @@
+
+/*
+Tonystaffiero Theme - Main Styles
+*/
+
+// @import "../../../tones/library/scss/customVariables";
+@import "customVariables";
+@import "../../../tones/library/scss/variables.scss";
+@import "../../../tones/library/scss/elements.scss";
+@import "../../../tones/library/scss/buttons.scss";
+@import "../../../tones/library/scss/fonts.scss";
+@import "../../../tones/library/scss/wp.scss";
+@import "wp.scss";
+//all included
+@import "../../../tones/bower_components/bootstrap-sass/assets/stylesheets/bootstrap.scss";
+@import "../../../tones/bower_components/slick-carousel/slick/slick-theme.scss";
+@import "../../../tones/bower_components/slick-carousel/slick/slick.scss";
+@import '../../../tones/bower_components/font-awesome/scss/font-awesome.scss';
+
+@import "../../../tones/library/scss/layout.scss";
+@import "navbar.scss";
+@import "../../../tones/library/scss/posts.scss";
+@import "../../../tones/library/scss/pages.scss";
+@import "../../../tones/library/scss/comments.scss";
+@import "../../../tones/library/scss/image-attachments.scss";
+@import "../../../tones/library/scss/widgets.scss";
+@import "../../../tones/library/scss/gallery.scss";
+@import "../../../tones/library/scss/slick-carousel.scss";
+@import "../../../tones/library/scss/arrow-animate.scss";
+
+// Add additional child imports here
+
+@import "video.scss";
+@import "tones.scss";

@@ -1,0 +1,109 @@
+/*
+
+WP-Bootstrap
+
+*/
+
+// Converted from less to Sass
+
+// Reset the icon font paths
+
+$fa-font-path: "../../../../tones/bower_components/font-awesome/fonts";
+$icon-font-path: "../../../../tones/bower_components/bootstrap-sass/assets/fonts/bootstrap/";
+
+// Slick Variables
+$slick-font-path: "../../../../tones/bower_components/slick-carousel/slick/fonts/";
+$slick-font-family: "slick";
+$slick-loader-path: "../../../../tones/bower_components/slick-carousel/slick/";
+
+// // //all included
+// @import "../../../tones/bower_components/bootstrap-sass/assets/stylesheets/bootstrap.scss";
+// @import "../../../tones/bower_components/slick-carousel/slick/slick-theme.scss";
+// @import "../../../tones/bower_components/slick-carousel/slick/slick.scss";
+// @import '../../../tones/bower_components/font-awesome/scss/font-awesome.scss';
+
+/* wp-specific classes */
+.wp-caption{
+
+}
+
+.wp-caption-text{
+	
+}
+
+.sticky{
+	
+}
+
+.gallery-caption{
+	
+}
+
+
+
+// @media only screen and (min-width: 768px) {
+// 	.carousel-caption p{
+// 		display: block;
+// 	}
+// }
+
+// @media only screen and (min-width: 980px) {
+// 	body{
+// 		padding-top: 60px;
+// 	}
+	
+// 	.container-fluid{
+// 		max-width: 970px;
+// 		margin: 0 auto;
+// 		padding-left: 20px;
+// 		padding-right: 20px;
+// 	}
+	
+// 	#inner-footer{
+// 		padding: 0;
+// 	}
+	
+// 	#content{
+// 		padding-left: 0;
+// 		padding-right: 0;
+// 	}
+	
+// 	.topbar-inner{
+// 		padding: 0;
+// 	}
+	
+// 	.topbar form.pull-right {
+// 		float: right;
+// 	}
+	
+// 	.navbar-search{
+// 		padding-left: 0;
+// 	}
+	
+// 	.blog .hero-unit{
+// 		margin-top: 10px;
+// 	}
+	
+// 	.page-template-page-homepage-php .hero-unit,
+// 	.blog .hero-unit{
+// 		padding: 60px;
+// 	}
+	
+// 	.hero-unit h1 {
+// 		font-size: 60px;
+// 	}
+	
+// 	/* hide edit comment button and show on hover on desktop version */
+// 	.edit-comment{
+// 		display: none;
+// 	}
+	
+// 	.vcard:hover .edit-comment{
+// 		display: inline-block;
+// 	}
+	
+// 	.comment .vcard .comment-text{
+// 		padding-left: 0;
+// 		padding-right: 0;
+// 	}
+// }

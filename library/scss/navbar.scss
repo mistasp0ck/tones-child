@@ -1,0 +1,573 @@
+/*
+
+WP-Bootstrap - Navbar
+
+*/
+
+.admin-bar .navbar-fixed-top {
+  top: 32px;
+}
+body.fixed {
+  padding-top: 100px;
+}
+
+.navbar {
+  border-radius: 0;
+  margin-bottom: 0;
+}
+// Default State (light background)    
+.navbar-default,.affixed .navbar-default.affix {
+    background: $color-light;  
+    transition: all ease $menu-transition-speed;
+
+  .navbar-nav {
+    > li > a {
+      color: $color-dark;
+
+      &:hover,
+      &:focus {
+        color: $color-dark-hover;
+        background: transparent;
+      }
+    }
+
+    > li > a.active {
+      background-color: #eee;
+      color: $color-dark;
+
+      &:hover,
+      &:focus {
+        color: $color-dark-hover;
+        background: transparent;
+      }
+
+    }
+    > .btn {
+      border: 1px solid $color-dark;
+      background: transparent;
+      color: $color-dark; 
+
+      &:hover,
+      &:focus {
+        color: $color-light;
+        background: $color-dark;
+      } 
+    }         
+  }
+}
+// Inverse State (dark background) 
+.navbar-inverse,.navbar-inverse.affix {
+    // background: $color-dark;
+    // background-image: linear-gradient(to bottom,#3c3c3c 0,#222 100%);	
+    @media(min-width: 768px ) {
+      background: url(../../../images/header-bg.jpg) no-repeat #383838;      
+    }
+    background-color: #383838;
+    background-position: top center;
+    transition: all ease $menu-transition-speed;
+    border: none;
+
+  .navbar-nav {
+    > li {
+      margin-left: 20px;
+      > a {
+          color: #f1f1f1;
+          letter-spacing: 1.1px;
+          font-weight: 400;
+          text-transform: uppercase;
+          font-size: 15px;
+          transition: all ease $menu-transition-speed;
+    
+            &:hover,
+            &:focus {
+              // color: $color-light;
+              background: transparent;
+              color: #b5b5b5;
+            }
+        }
+      }
+
+    > li.active > a {
+      background-color: transparent;
+      color: #a1a1a1;
+
+      @media (min-width: 767px) {
+        border-bottom: 0.08em solid #f1f1f1;
+        border-width: 80%;
+        color: $color-light;
+      }
+
+      text-decoration: none;
+
+        &:hover,
+        &:focus {
+          color: $color-light-hover;
+          background: transparent;
+        }
+    > .btn {
+      border: 1px solid $color-light;
+      background: transparent;
+      color: $color-light; 
+
+        &:hover,
+        &:focus {
+          color: $color-dark;
+          background: $color-light;
+        }
+    }      
+
+    }
+  }
+}
+
+.nav > li > a {
+    position: relative;
+    display: block;
+    padding: 10px 10px;
+}
+.nav > li
+
+// Mobile Navbar BG
+.navbar-default .navbar-collapse {
+    border-color: transparent;
+    background: transparent;
+    padding: 0px 15px; 
+
+    @media (min-width: $screen-tablet) {
+      background: transparent;
+      padding: 0px; 
+    } 
+}
+
+.navbar-inverse .navbar-toggle {
+  border-color: #737373;
+}
+
+.navbar-header a {
+  display: block;
+  // background: url(../../../images/logo.png) no-repeat;
+  // width: 180px;
+  // height: 56px;
+  overflow: hidden;
+  text-indent: -9999em;
+  background-size: contain;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.navbar-brand svg {
+  display: block;
+  width: 210px;
+}
+
+.navbar-brand {
+  background: url(../../../images/logo.svg) no-repeat;
+  width: 211px;
+  height: auto;
+  background-size: contain;
+  padding: 0;
+}
+.navbar-nav {
+  margin: 0;
+  clear: both;
+}
+.dropdown-menu > li > a {
+  color: #fff;
+}
+
+:hover {
+	transition: border,color,background-color 0.2s ease-in-out;		
+}
+
+.no-affix {
+    background-color: #fff;
+}
+
+.no-affix.navbar-fixed-top {
+    background: #fff;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.53);     
+}
+.affixed.navbar-fixed-top {
+  position: absolute;
+  top: 0 ;
+}
+.no-affix.navbar-default .navbar-nav > li > a {
+	color: $color-dark;
+}
+.no-affix a.navbar-brand:before {
+	opacity: 1;
+}
+
+.dropdown-menu > li > a {
+  color: $color-dark;
+}
+
+.dropdown-menu li{
+  margin-left: 0;
+}
+
+.navbar-brand {
+  // .cssSprite( $logo-light );
+  background-size: contain;
+  // text-indent: -9999em;
+  // width: 279px;
+  width: auto;
+  height: auto;
+  margin-top: 10px;
+  overflow: hidden;
+  display: block; 
+  position: relative; 
+}
+a.navbar-brand:before {
+    display: block;
+    opacity: 0;
+    transition: opacity $menu-transition-speed;
+    position: absolute;
+    left:0;
+    top:0;
+    content: ' ';   
+    width: 46px;
+    height: 45px;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ddd;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+    background-color: rgba(231, 231, 231, 0.4);
+}
+
+.navbar-fixed-top .navbar-collapse, .navbar-fixed-bottom .navbar-collapse {
+  max-height: 423px;
+}
+
+// From basic Bootstrap theme
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 160px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    font-size: 14px;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);  
+}
+.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
+    background-color: #e8e8e8;
+    background-image: linear-gradient(to bottom,#f5f5f5 0,#e8e8e8 100%);
+    background-repeat: repeat-x;
+}
+.container > .navbar-header, .container > .navbar-collapse, .container-fluid > .navbar-header, .container-fluid > .navbar-collapse {
+    margin-right: 0;
+    margin-left: 0;
+}
+.navbar-toggle {
+  margin-right: 0;
+}
+
+@media (min-width: 768px) {
+
+  .navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
+    margin-left: -15px;
+    margin-left: 0px;
+  }  
+
+  .container > .navbar-header, .container > .navbar-collapse, .container-fluid > .navbar-header, .container-fluid > .navbar-collapse {
+      margin-right: -15px;
+      margin-left: -15px;
+  }
+  .navbar-header a {
+    width: 252px;
+    height: 65px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  // Transparent State
+  body.transparent {
+    padding-top: 0;
+  }
+  .affixed .navbar-default{
+    background: transparent; 
+    border-bottom: 1px solid transparent;
+    .navbar-nav {
+      > li > a {
+        color: $color-light;
+        &:hover,
+        &:focus {
+          color: $color-light-hover;
+          background-color: $navbar-inverse-link-hover-bg;
+        }
+      }
+      > li > a.active {
+        background-color: #eee;
+
+        &:hover,
+        &:focus {
+          color: $color-light-hover;
+          background-color: $navbar-inverse-link-hover-bg;
+        }
+
+      }
+      > .btn {
+        border: 1px solid $color-light;
+        background: transparent;
+        color: $color-light; 
+      }
+    }
+    .navbar-brand {
+      color: $color-light;
+    }
+  }
+
+  .navbar-nav {
+    clear: right;
+    float: right;
+    margin-top: 34px;
+  }
+
+  // Affix State
+  .affixed .navbar-default.affix {
+     border-bottom: 1px solid rgba(91, 91, 91, 0.17); 
+     box-shadow: 0px 0px 2px rgba(51, 51, 51, 0.07);
+
+     .navbar-brand {
+       color: $color-dark;
+     }
+  }
+
+  .navbar-default .navbar-form {
+      border-color: transparent
+  }
+
+  .navbar-nav > li:first-child {
+    margin-left: -15px;
+  }
+  .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+    background-color: #EFEFEF;  
+  }
+  .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+      text-decoration: none;
+      color: $color-dark;
+      background-color: #fff;
+  } 
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: $color-dark;
+  } 
+  .navbar-fixed-top .navbar-collapse, .navbar-fixed-bottom .navbar-collapse {
+      max-height: 340px;
+  }
+
+  .no-affix .navbar-default .navbar-collapse {
+    border-color: transparent;
+    background: transparent;
+  }
+  .navbar-fixed-top .navbar-collapse, .navbar-static-top .navbar-collapse, .navbar-fixed-bottom .navbar-collapse {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    background: none;
+    border-color: #e7e7e7;
+  }
+  .navbar-nav>li>a {
+      padding-top: 8px;
+      padding-bottom: 8px;
+  }
+
+  .affixed .navbar-default .navbar-nav > .active > a:after {
+    border-bottom: 2px solid $color-light;
+    content: "";
+    position: absolute;
+    display: inline-block;
+    bottom: 8px;
+    left: 0;
+    right: 0;
+    width: 80%;
+    margin: 0 auto;  
+  }
+  .no-affix .navbar-default .navbar-nav > .active > a:after,.affix.navbar-default .navbar-nav > .active > a:after {
+    border-bottom: 2px solid $color-dark; 
+  }   
+  .affixed .navbar-inverse.navbar-default .navbar-nav > .active > a:after {
+    border-bottom: 2px solid $color-light;
+  } 
+  .navbar-default .navbar-nav > .active > a {
+    background-color: transparent;
+  } 
+  .navbar-brand {
+    width: 210px;
+  }  
+
+  .affixed.navbar-fixed-top.affix {
+    top: 0;
+  } 
+  // CSS dropdown menu
+  .dropdown-menu {
+    display: block;
+  }
+  #nav-container ul ul {
+    float: left;
+    margin: 0;
+    position: absolute;
+    left: -999em;
+    z-index: 99999;
+    padding: 0;
+  }
+
+  #nav-container li li {
+    border: 0;
+    display: block;
+    height: auto;
+    line-height: 1.0909090909;
+  }
+
+  #nav-container ul ul ul {
+    left: -999em;
+    top: 0;
+  }
+  #nav-container ul ul li:last-child a{
+    border-bottom: none;
+  }
+  #nav-container ul ul a {
+    white-space: normal;
+  }
+  #nav-container ul ul li {
+    margin-bottom: 0;
+    background: none;
+   
+  }  
+  #nav-container ul ul a {
+    padding: 10px 10px;  
+  }
+  #nav-container ul ul .caret {
+    display: none;
+  }  
+  #nav-container ul ul ul a:after {
+    content: none;
+  }  
+  #nav-container ul ul a:after {
+    content: none;
+  }   
+
+  #nav-container li:hover > a,
+  #nav-container li.focus > a {
+  }
+
+  #nav-container ul ul a:hover,
+  #nav-container ul ul li.focus > a {
+    background-color: #344082;    
+  }
+
+  #nav-container ul ul li.menu-item-has-children > a:after {
+    @include fa-icon();
+    content: $fa-var-caret-right;
+    position: absolute;
+    display: block;
+    color: #434343;
+    width: 14px;
+    height: 14px;
+    line-height: 1;
+    font-size: 15px;
+    text-align: center;
+    top: 50%;
+    right: 7.5px;
+    margin-top: -8px;
+  }
+  #nav-container ul ul li:hover a:after,
+  #nav-container ul ul li.focus > a:after {
+    color: inherit;
+  }
+
+  #nav-container ul li:hover > ul,
+  #nav-container ul li.focus > ul {
+    left: auto;
+  }
+
+  #nav-container ul ul li:hover > ul,
+  #nav-container ul ul li.focus > ul {
+    left: 100%;
+  }
+
+  #nav-container .menu-item-has-children > a,
+  #nav-container .page_item_has_children > a {
+    padding-right: 26px;
+  }
+
+  #nav-container li .menu-item-has-children > a,
+  #nav-container li .page_item_has_children > a {
+    padding-right: 20px;
+    width: 168px;
+  }
+  //Trigger for dropdown
+  #nav-container ul li:hover>ul, #nav-container ul li.focus>ul {
+    left: auto;
+  }
+}
+@media (min-width: 1024px) {
+  .navbar-nav>li>a {
+      padding-top: 15px;
+      padding-bottom: 15px;
+  }
+
+  .navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
+    margin-left: 15px;
+  }  
+  .navbar-brand {
+    width: 279px;
+    margin-top: 0;
+  }  
+  .affixed.navbar-fixed-top.affix {
+    position: relative;
+    top: 0;
+  }
+  .affix.navbar-default .navbar-nav > li > a {
+    color: $color-dark;
+  }
+  .affix.navbar-inverse .navbar-nav > li > a {
+    color: $navbar-inverse-brand-color;
+  }
+  .affix a.navbar-brand {
+    background: none;
+  }
+  .affix a.navbar-brand:before {
+    opacity: 1;
+  }  
+  .affixed.navbar-fixed-top.affix {
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;  
+    background: #EFEFEF;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.53);
+  }
+
+  .affix.navbar-default .navbar-nav > li > a:hover ,
+  .affix.navbar-default .navbar-nav > .active > a:hover,
+  .affix.navbar-default .navbar-nav > .active > a:focus {
+    color: #C5C5C5;
+    background: transparent;
+  }
+
+  .affix.navbar-default .navbar-nav > .active > a,
+  .affix.navbar-default .navbar-nav > .active > a:hover,
+  .affix.navbar-default .navbar-nav > .active > a:focus {
+    background: transparent;
+  }
+
+  .affixed.navbar-fixed-top.affix {
+    position: fixed;
+  }  
+}
+
+
+
+
+

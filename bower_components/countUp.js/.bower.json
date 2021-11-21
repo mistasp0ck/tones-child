@@ -1,0 +1,29 @@
+{
+  "name": "countUp.js",
+  "main": [
+    "dist/countUp.min.js",
+    "dist/angular-countUp.js"
+  ],
+  "author": "Jamie Perkins",
+  "ignore": [
+    "CHANGELOG.md",
+    "LICENSE.md",
+    "README.md",
+    "contributing.md",
+    "gulpfile.js",
+    "component.json",
+    "index.html"
+  ],
+  "homepage": "https://github.com/inorganik/countUp.js",
+  "version": "1.8.3",
+  "_release": "1.8.3",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.8.3",
+    "commit": "2f51d3694d8e894141441e58c0dc93758f0b425a"
+  },
+  "_source": "https://github.com/inorganik/countUp.js.git",
+  "_target": "^1.8.3",
+  "_originalSource": "countup",
+  "_direct": true
+}
