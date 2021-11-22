@@ -15,7 +15,7 @@ yoast_breadcrumb('<p id="breadcrumbs">','</p>');
 ?>
 			<div id="content" class="clearfix row">
 			
-				<div id="main" class="col col-lg-10 col-md-offset-1 clearfix" role="main">
+				<div id="main" class="col col-lg-10 offset-md-1 clearfix" role="main">
 
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					
