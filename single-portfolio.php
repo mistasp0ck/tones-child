@@ -1,5 +1,5 @@
 <?php 
-if (!tones_show_title()) {
+if (!wpbs_show_title()) {
 	$classes = 'clearfix no-title';
 	$hide_title = true;
 } else {

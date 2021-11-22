@@ -5,7 +5,7 @@ $page_id = get_post( $posts_page )->ID;
 ?>
 
 <?php 
-if (!tones_show_title($page_id)) {
+if (!wpbs_show_title($page_id)) {
 		$classes = 'clearfix no-title';
 		$hide_title = true;
 	} else {
@@ -51,9 +51,9 @@ yoast_breadcrumb('<p id="breadcrumbs">','</p>');
 					
 					<?php endwhile; ?>	
 					
-					<?php if (function_exists('wpbs__page_navi')) { // if expirimental feature is active ?>
+					<?php if (function_exists('wpbs_page_navi')) { // if expirimental feature is active ?>
 						
-						<?php wpbs__page_navi(); // use the page navi function ?>
+						<?php wpbs_page_navi(); // use the page navi function ?>
 						
 					<?php } else { // if it is disabled, display regular wp prev & next links ?>
 						<nav class="wp-prev-next">

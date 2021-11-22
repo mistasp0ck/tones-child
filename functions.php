@@ -24,7 +24,6 @@ if ( ! isset( $content_width ) ) $content_width = '';
 // 
 
 // enqueue styles
-// if( !function_exists("wpbs_base_theme_styles") ) {  
 function wpbs_theme_styles() { 
 
   wp_enqueue_style('lightbox', get_template_directory_uri() . '/bower_components/lity/dist/lity.min.css', '1.6.5'); 
@@ -33,23 +32,17 @@ function wpbs_theme_styles() {
 
   // This is the compiled css file from SASS - this means you compile the SASS file locally and put it in the appropriate directory if you want to make any changes to the master bootstrap.css.
   // // For child themes
-  wp_register_style( 'tones-style', get_stylesheet_directory_uri() . '/library/dist/css/styles.81d6477a.min.css', array(), '1.0', 'all' );
+  wp_register_style( 'tones-style', get_stylesheet_directory_uri() . '/library/dist/css/styles.3dddc73f.min.css', array(), '1.0', 'all' );
   wp_enqueue_style( 'tones-style' );
 
 }
-// }
-add_action( 'wp_enqueue_scripts', 'wpbs_base_theme_styles' );
 
 // enqueue javascript
 function wpbs_theme_js(){
-
   if ( !is_admin() ){
     if ( is_singular() AND comments_open() AND ( get_option( 'thread_comments' ) == 1) ) 
       wp_enqueue_script( 'comment-reply' );
   }
-
-  wp_deregister_script( 'grunticon-loader');
-  // Uncomment if using grunticon
 
   wp_enqueue_script('masonry', get_stylesheet_directory_uri() . '/bower_components/imagesloaded/imagesloaded.pkgd.min.js',array('jquery'), '4.0.0');
 
@@ -60,7 +53,7 @@ function wpbs_theme_js(){
   wp_enqueue_script('lightbox', get_template_directory_uri() . '/bower_components/lity/dist/lity.min.js', array('jquery'), '1.6.5', true);
 
   wp_register_script( 'tones-js', 
-    get_stylesheet_directory_uri() . '/library/dist/js/scripts.0217d779.min.js',
+    get_stylesheet_directory_uri() . '/library/dist/js/scripts.ff2a4914.min.js',
     array('jquery'), 
     '1.2',
     true );
@@ -79,7 +72,6 @@ function wpbs_theme_js(){
 
 }
 
-add_action( 'wp_enqueue_scripts', 'wpbs_base_theme_js' );
 
 add_image_size( 'ts-porfolio-feed', 1200, '', true );
 

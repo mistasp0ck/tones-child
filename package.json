@@ -4,6 +4,7 @@
   "description": "Child theme for WP Bootstrap Theme",
   "main": "Gruntfile.js",
   "devDependencies": {
+    "@popperjs/core": "^2.10.2",
     "babel-cli": "^6.26.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",

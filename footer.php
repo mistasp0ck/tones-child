@@ -21,7 +21,7 @@
 		          </div>
 					
 					<nav class="clearfix">
-						<?php wpbs__footer_links(); // Adjust using Menus in Wordpress Admin ?>
+						<?php wpbs_footer_links(); // Adjust using Menus in Wordpress Admin ?>
 						<?php echo do_shortcode('[social]'); ?>
 					</nav>
 			

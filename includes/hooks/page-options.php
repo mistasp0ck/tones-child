@@ -43,7 +43,7 @@ function wpbs_get_page_options() {
     $options['logo_id'] = wpbs_get_option( 'wpbs_logo_light_id' );
 
   } elseif ( get_post_meta($options['page_id'],'fs_menu_style', true) == 'dark'  ) {
-    $options['menuclasses'] .= ' navbar-inverse';
+    $options['menuclasses'] .= ' navbar-dark';
     $options['logo_class'] = ' logo-option';
     $options['logo'] = $options['logo_affix_uri'] = wpbs_get_option( 'wpbs_logo_dark' );
     $options['logo_id'] = wpbs_get_option( 'wpbs_logo_dark_id' );
@@ -55,7 +55,7 @@ function wpbs_get_page_options() {
       $options['logo_id'] = wpbs_get_option( 'wpbs_logo_light_id' );
 
     } elseif (wpbs_get_option( 'wpbs_menu_style' ) == 'dark' ) {
-      $options['menuclasses'] .= ' navbar-inverse';
+      $options['menuclasses'] .= ' navbar-dark';
       $options['logo_class'] = ' logo-option';
       $options['logo'] = $options['logo_affix_uri'] = wpbs_get_option( 'wpbs_logo_dark' );
       $options['logo_id'] = wpbs_get_option( 'wpbs_logo_id' );

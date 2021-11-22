@@ -21,6 +21,9 @@ header .navbar-collapse {
   border-radius: 0;
   margin-bottom: 0;
 }
+.navbar-default {
+  padding: 0;
+}
 // Default State (light background)    
 .navbar-default,.affixed .navbar-default.affix {
     background: $color-light;  
@@ -62,7 +65,7 @@ header .navbar-collapse {
   }
 }
 // Inverse State (dark background) 
-.navbar-inverse,.navbar-inverse.affix {
+.navbar-dark,.navbar-dark.affix {
     // background: $color-dark;
     // background-image: linear-gradient(to bottom,#3c3c3c 0,#222 100%);	
     @media(min-width: 768px ) {
@@ -75,7 +78,9 @@ header .navbar-collapse {
 
   .navbar-nav {
     > li {
-      margin-left: 20px;
+      @media(min-width: 768px ) {
+        margin-left: 20px;
+      }
       > a {
           color: #f1f1f1;
           letter-spacing: 1.1px;
@@ -95,7 +100,7 @@ header .navbar-collapse {
 
     > li.active > a {
       background-color: transparent;
-      color: #a1a1a1;
+      color: #bfbfbf;
 
       @media (min-width: 767px) {
         border-bottom: 0.08em solid #f1f1f1;
@@ -145,24 +150,32 @@ header .navbar-collapse {
     } 
 }
 
-.navbar-inverse .navbar-toggle {
+.navbar-dark .navbar-toggle {
   border-color: #737373;
 }
 
-.navbar-header a {
+.navbar-brand  {
   display: block;
-  // background: url(../../../images/logo.png) no-repeat;
-  // width: 180px;
-  // height: 56px;
   overflow: hidden;
   text-indent: -9999em;
   background-size: contain;
-  margin-top: 10px;
-  margin-bottom: 10px;
 }
+.navbar-header {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  @media (min-width: 768px) {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+
 .navbar-brand svg {
   display: block;
   width: 210px;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: #fff;
 }
 
 .navbar-brand {
@@ -212,13 +225,8 @@ header .navbar-collapse {
 }
 
 .navbar-brand {
-  // .cssSprite( $logo-light );
   background-size: contain;
-  // text-indent: -9999em;
-  // width: 279px;
-  width: auto;
   height: auto;
-  margin-top: 10px;
   overflow: hidden;
   display: block; 
   position: relative; 
@@ -290,11 +298,9 @@ a.navbar-brand:before {
       margin-right: -15px;
       margin-left: -15px;
   }
-  .navbar-header a {
+  .navbar-brand {
     width: 252px;
     height: 65px;
-    margin-top: 20px;
-    margin-bottom: 20px;
   }
   // Transparent State
   body.transparent {
@@ -336,7 +342,8 @@ a.navbar-brand:before {
   .navbar-nav {
     clear: right;
     float: right;
-    margin-top: 34px;
+    margin-top: 15px;
+    padding: 0;
   }
 
   // Affix State
@@ -402,7 +409,7 @@ a.navbar-brand:before {
   .no-affix .navbar-default .navbar-nav > .active > a:after,.affix.navbar-default .navbar-nav > .active > a:after {
     border-bottom: 2px solid $color-dark; 
   }   
-  .affixed .navbar-inverse.navbar-default .navbar-nav > .active > a:after {
+  .affixed .navbar-dark.navbar-default .navbar-nav > .active > a:after {
     border-bottom: 2px solid $color-light;
   } 
   .navbar-default .navbar-nav > .active > a {
@@ -522,9 +529,8 @@ a.navbar-brand:before {
       padding-top: 15px;
       padding-bottom: 15px;
   }
-
   .navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
-    margin-left: 15px;
+    margin-left: 0px;
   }  
   .navbar-brand {
     width: 279px;
@@ -537,7 +543,7 @@ a.navbar-brand:before {
   .affix.navbar-default .navbar-nav > li > a {
     color: $color-dark;
   }
-  .affix.navbar-inverse .navbar-nav > li > a {
+  .affix.navbar-dark .navbar-nav > li > a {
     color: $navbar-inverse-brand-color;
   }
   .affix a.navbar-brand {

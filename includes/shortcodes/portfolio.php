@@ -78,7 +78,7 @@ error_log(print_r($args,true));
 		<?php if ( has_post_thumbnail() ) { ?>
 		<?php $post_thumbnail_id = get_post_thumbnail_id(); ?>
 		<?php $featured_img = wp_get_attachment_image( $post_thumbnail_id, 'ts-porfolio-feed','',
-		array('class' => 'img-responsive' )); ?>
+		array('class' => 'img-fluid' )); ?>
 		<?php } ?>
 
 		<!-- <div class="portfolio-entry col col-sm-<?php //echo $colnum; ?>" style="background-image: url('<?php //echo $featured_src[0]; ?>');"> -->

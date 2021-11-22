@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <?php 
-if (!tones_show_title()) {
+if (!wpbs_show_title()) {
 	$classes = 'clearfix no-title';
 	$hide_title = true;
 } else {
@@ -10,14 +10,14 @@ if (!tones_show_title()) {
 ?>	
 			<div id="content" class="clearfix row">
 			
-				<div id="main" class="col-sm-8 clearfix" role="main">
+				<div id="main" class="col-sm-12 clearfix" role="main">
 
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					
 					<article id="post-<?php the_ID(); ?>" <?php post_class($classes); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 						
 						<header>
-						<?php if (tones_show_title()) { ?>	
+						<?php if (wpbs_show_title()) { ?>	
 							<div class="page-header"><h1 class="page-title" itemprop="headline"><?php the_title(); ?></h1></div>
 						<?php } ?>
 						</header> <!-- end article header -->
@@ -36,7 +36,7 @@ if (!tones_show_title()) {
 					
 					</article> <!-- end article -->
 					
-					<?php comments_template('',true); ?>
+					<?php //comments_template('',true); ?>
 					
 					<?php endwhile; ?>		
 					
@@ -57,7 +57,7 @@ if (!tones_show_title()) {
 			
 				</div> <!-- end #main -->
     
-				<?php get_sidebar(); // sidebar 1 ?>
+				<?php //get_sidebar(); // sidebar 1 ?>
     
 			</div> <!-- end #content -->
 

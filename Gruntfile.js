@@ -144,7 +144,7 @@ module.exports = function(grunt) {
         files: [
           '<%= jshint.all %>'
         ],
-        tasks: ['clean:js', 'uglify:dev', 'version']
+        tasks: ['clean:js','browserify:dev', 'terser:dev', 'version']
       }
 
     },

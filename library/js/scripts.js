@@ -1,7 +1,8 @@
+
+const bootstrap = require('bootstrap');
 // as the page loads, call these scripts
 var $ = jQuery.noConflict();
 $(document).ready(function() {
-
   var templateUrl = vars.templateUrl;
 
   if (typeof imagesLoaded == 'function') { 
@@ -41,9 +42,7 @@ $(document).ready(function() {
   }
   var entryCss = '';
   $('.portfolio-entry').each(function(index) {
-    console.log(index);
     var color = $(this).find('.overlay').attr('data-bg');
-    console.log(color);
     entryCss += '.portfolio-entry-'+index+' .overlay:before {'
       +'background-color: '+color+ ';'
       + '}';

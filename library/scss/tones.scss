@@ -5,9 +5,11 @@ body {
   overflow-x: hidden;
   color: #656565;
 }
+
 body {
   background: url('../../../images/body-bg.jpg') top left no-repeat #F6F6F6;
   transition: all ease $menu-transition-speed;
+  font-family: 'open sans', sans-serif;
 }
 
 // Header 
@@ -33,6 +35,11 @@ body {
 
 #content a {
   color: #e8685f;
+  text-decoration: none;
+  transition: color 0.25s ease;
+  &:hover {
+    color: #e5928c;
+  }
 }
 .footer-wrapper a {
   color: #ffffff;
@@ -41,6 +48,16 @@ body {
 }
 #content .page-header a {
   color: #3b3b3b;
+  text-decoration: none;
+}
+#content .post .page-header {
+  a {
+    transition: color 0.25s ease;
+    color: #e33c30;
+  }
+  .h2 {
+    margin-bottom: 10px;
+  }
 }
 
 #content a:focus,#content  a:hover,.footer-wrapper a:focus,.footer-wrapper a:hover {
@@ -89,6 +106,9 @@ a:hover {
 #main article {
     margin-bottom: 0px;
     padding: 0 0 0px;
+}
+#main article.post {
+  margin-bottom: 60px;
 }
 
 // Homepage
@@ -140,6 +160,9 @@ a:hover {
   .col-inner {
     background-color: #eaeaea;
 
+  }
+  h3 {
+    font-size: 24px;
   }
   // [class^="col-"] {
   //   flex: 0 0 ;
@@ -301,9 +324,15 @@ h1 {
 #main p.meta a{
   border-bottom: none;
   color: #e8685f;
+  text-decoration: none;
+  transition: color 0.25s ease;
+
 }
 #main p.meta a:hover{
-  border-bottom: solid 1px #e8685f;
+  border-bottom: none;
+  text-decoration: none;
+  color: #e5928c;
+
 }
 
 #main p.meta .time:before {
@@ -578,8 +607,9 @@ footer .widget ul li {
 
 // @media (min-width: 768px ) {
   #widget-footer {
-    margin-top: 30px;
-    margin-bottom: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-top: 0;
   }
   .section {
     padding-top: 20px;
